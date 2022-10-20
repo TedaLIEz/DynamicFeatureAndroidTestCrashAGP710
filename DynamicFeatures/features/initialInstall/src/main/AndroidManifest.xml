@@ -19,11 +19,9 @@
     package="com.google.android.samples.dynamicfeatures.initialinstall">
 
     <dist:module
+        dist:onDemand="false"
         dist:title="@string/title_module_initial">
         <dist:fusing dist:include="true" />
-        <dist:delivery>
-            <dist:install-time />
-        </dist:delivery>
     </dist:module>
 
     <application>
@@ -32,6 +30,11 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="com.google.android.samples.dynamicfeatures.test"
+            android:name="com.google.android.samples.dynamicfeatures.MyContentProvider"
+            android:enabled="true"/>
     </application>
 </manifest>
 
